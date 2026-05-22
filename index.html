@@ -177,6 +177,7 @@
   .fc .fc-daygrid-event .fc-event-title { text-align: center; }
   .fc .fc-daygrid-event.fc-event-online { background: #8a6a8a; font-size: 0.44rem; }
   .fc .fc-daygrid-event.fc-event-private { background: #a09060; }
+  .fc .fc-daygrid-event.fc-event-private.fc-event-full { background: #d4cbb8; color: rgba(90,80,60,0.6); }
   .fc .fc-scrollgrid { border-color: #e0e8e0; }
   .fc .fc-toolbar { margin-bottom: 16px; }
   .fc-day-sat .fc-daygrid-day-number { color: #5a7a9a; }
@@ -686,6 +687,8 @@
               個人      → 'fc-event-private'
    ===================================================*/
 const lessonEvents = [
+  { title: '個人 午後満席', date: '2026-06-01', className: 'fc-event-private fc-event-full' },
+  { title: '個人 午後満席', date: '2026-05-25', className: 'fc-event-private fc-event-full' },
   { title: 'スタジオ 14:30〜17:00', date: '2026-05-12' },
   { title: 'スタジオ 14:30〜17:00', date: '2026-05-26' },
   { title: 'オンライン 20:00〜21:00', date: '2026-05-15', className: 'fc-event-online' },
@@ -722,7 +725,11 @@ document.addEventListener('DOMContentLoaded', function() {
       if (time) {
         const timeEl = document.createElement('div');
         timeEl.style.cssText = 'font-size:0.48rem; color:#3a4a3a; letter-spacing:0.05em; text-align:center; padding:2px 0 3px; line-height:1;';
-        timeEl.textContent = time;
+        if (time.includes('満席')) {
+          timeEl.innerHTML = time.replace('満席', '<span style="color:#8b0000;">満席</span>');
+        } else {
+          timeEl.textContent = time;
+        }
         const harness = arg.el.closest('.fc-daygrid-event-harness');
         if (harness) harness.parentNode.insertBefore(timeEl, harness.nextSibling);
       }

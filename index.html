@@ -171,12 +171,17 @@
     padding: 1px 4px;
     color: #fff;
   }
+  .fc .fc-daygrid-event .fc-event-main { width: 100%; }
+  .fc .fc-daygrid-event .fc-event-main-frame { justify-content: center; }
+  .fc .fc-daygrid-event .fc-event-title-container { flex: unset; text-align: center; width: 100%; }
+  .fc .fc-daygrid-event .fc-event-title { text-align: center; }
   .fc .fc-daygrid-event.fc-event-online { background: #8a6a8a; font-size: 0.44rem; }
   .fc .fc-daygrid-event.fc-event-private { background: #a09060; }
   .fc .fc-scrollgrid { border-color: #e0e8e0; }
   .fc .fc-toolbar { margin-bottom: 16px; }
   .fc-day-sat .fc-daygrid-day-number { color: #5a7a9a; }
-  .fc-day-sun .fc-daygrid-day-number { color: #9a5a5a; }
+  .fc-day-sun .fc-daygrid-day-number { color: #b03030; }
+  .fc-col-header-cell.fc-day-sun { color: #b03030; }
   .calendar-wrapper {
     background: #fff;
     border: 1px solid var(--green-soft);
@@ -377,6 +382,7 @@
       <div style="margin-bottom:12px;">
         <h3 class="serif" style="font-size:1rem; color:var(--green-deep); font-weight:400;">オンラインレッスン</h3>
       </div>
+      <p style="font-size:0.88rem; color:var(--green-deep); font-weight:500; line-height:2.2; margin-top:4px;">6月より 午前の入門編クラス 始めます</p>
       <p style="font-size:0.95rem; color:var(--text-sub); line-height:2.2;">毎月第1・第3水曜日<br>10:00〜11:00</p>
       <p style="font-size:0.95rem; color:var(--text-sub); line-height:2.2; margin-top:8px;">毎月第1・第3金曜日<br>20:00〜21:00</p>
     </div>
@@ -680,16 +686,16 @@
               個人      → 'fc-event-private'
    ===================================================*/
 const lessonEvents = [
-  { title: 'スタジオ', date: '2026-05-12' },
-  { title: 'スタジオ', date: '2026-05-26' },
-  { title: 'オンライン', date: '2026-05-15', className: 'fc-event-online' },
-  { title: 'オンライン', date: '2026-05-29', className: 'fc-event-online' },
-  { title: 'スタジオ', date: '2026-06-09' },
-  { title: 'スタジオ', date: '2026-06-23' },
-  { title: 'オンライン', date: '2026-06-03', className: 'fc-event-online' },
-  { title: 'オンライン', date: '2026-06-05', className: 'fc-event-online' },
-  { title: 'オンライン', date: '2026-06-17', className: 'fc-event-online' },
-  { title: 'オンライン', date: '2026-06-19', className: 'fc-event-online' },
+  { title: 'スタジオ 14:30〜17:00', date: '2026-05-12' },
+  { title: 'スタジオ 14:30〜17:00', date: '2026-05-26' },
+  { title: 'オンライン 20:00〜21:00', date: '2026-05-15', className: 'fc-event-online' },
+  { title: 'オンライン 20:00〜21:00', date: '2026-05-29', className: 'fc-event-online' },
+  { title: 'スタジオ 14:30〜17:00', date: '2026-06-09' },
+  { title: 'スタジオ 14:30〜17:00', date: '2026-06-23' },
+  { title: 'オンライン 10:00〜11:00', date: '2026-06-03', className: 'fc-event-online' },
+  { title: 'オンライン 20:00〜21:00', date: '2026-06-05', className: 'fc-event-online' },
+  { title: 'オンライン 10:00〜11:00', date: '2026-06-17', className: 'fc-event-online' },
+  { title: 'オンライン 20:00〜21:00', date: '2026-06-19', className: 'fc-event-online' },
 ];
 /* ===================================================*/
 
@@ -706,6 +712,21 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     events: lessonEvents,
     eventClick: function() {},
+    eventContent: function(arg) {
+      const name = arg.event.title.split(' ')[0];
+      return { html: '<div style="width:100%; text-align:center; padding:1px 0;">' + name + '</div>' };
+    },
+    eventDidMount: function(arg) {
+      const parts = arg.event.title.split(' ');
+      const time = parts.slice(1).join(' ');
+      if (time) {
+        const timeEl = document.createElement('div');
+        timeEl.style.cssText = 'font-size:0.48rem; color:#3a4a3a; letter-spacing:0.05em; text-align:center; padding:2px 0 3px; line-height:1;';
+        timeEl.textContent = time;
+        const harness = arg.el.closest('.fc-daygrid-event-harness');
+        if (harness) harness.parentNode.insertBefore(timeEl, harness.nextSibling);
+      }
+    },
     dayCellContent: function(arg) {
       return arg.date.getDate();
     },

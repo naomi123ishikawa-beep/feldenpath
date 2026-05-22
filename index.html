@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 <style>
   :root {
     --green-deep: #3a5a3a;
@@ -99,6 +100,112 @@
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
   .service-item.visible { opacity: 1; transform: translateY(0); }
+
+  /* FullCalendar カスタムスタイル */
+  .fc {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+  }
+  .fc .fc-toolbar-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--green-deep);
+    letter-spacing: 0.1em;
+  }
+  .fc .fc-button {
+    background: transparent;
+    border: 1px solid var(--green-soft);
+    color: var(--green-main);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 1px;
+    box-shadow: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .fc .fc-button:hover {
+    background: var(--green-soft);
+    border-color: var(--green-soft);
+    color: var(--green-deep);
+  }
+  .fc .fc-button-primary:not(:disabled).fc-button-active,
+  .fc .fc-button-primary:not(:disabled):active {
+    background: var(--green-main);
+    border-color: var(--green-main);
+    color: #fff;
+  }
+  .fc .fc-col-header-cell {
+    background: var(--green-bg);
+    font-weight: 300;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--text-sub);
+    padding: 7px 0;
+    border-color: #e0e8e0;
+  }
+  .fc .fc-daygrid-day { border-color: #e0e8e0; }
+  .fc .fc-daygrid-day-number {
+    color: var(--text-sub);
+    font-size: 0.95rem;
+    font-weight: 300;
+    padding: 5px 7px;
+  }
+  .fc .fc-day-today { background: rgba(90,138,90,0.06) !important; }
+  .fc .fc-day-today .fc-daygrid-day-number {
+    color: var(--green-deep);
+    font-weight: 500;
+  }
+  .fc .fc-daygrid-event {
+    background: var(--green-main);
+    border: none;
+    border-radius: 1px;
+    font-size: 0.58rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    padding: 1px 4px;
+    color: #fff;
+  }
+  .fc .fc-daygrid-event.fc-event-online { background: #8a6a8a; font-size: 0.44rem; }
+  .fc .fc-daygrid-event.fc-event-private { background: #a09060; }
+  .fc .fc-scrollgrid { border-color: #e0e8e0; }
+  .fc .fc-toolbar { margin-bottom: 16px; }
+  .fc-day-sat .fc-daygrid-day-number { color: #5a7a9a; }
+  .fc-day-sun .fc-daygrid-day-number { color: #9a5a5a; }
+  .calendar-wrapper {
+    background: #fff;
+    border: 1px solid var(--green-soft);
+    border-radius: 2px;
+    padding: 20px;
+    margin-bottom: 24px;
+  }
+  .calendar-legend {
+    display: flex;
+    gap: 20px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #e0e8e0;
+    flex-wrap: wrap;
+  }
+  .calendar-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.68rem;
+    color: var(--text-sub);
+    letter-spacing: 0.06em;
+  }
+  .calendar-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;
+    flex-shrink: 0;
+  }
   .service-item:last-child { border-bottom: 1px solid #d8e4d8; }
 
   details summary { list-style: none; cursor: pointer; }
@@ -214,7 +321,7 @@
       <div style="display:flex; align-items:flex-start; gap:20px;">
         
         <div>
-          <h3 class="serif" style="font-size: 1rem; color: var(--green-deep); font-weight: 400; letter-spacing: 0.1em; margin-bottom: 12px;">グループレッスン</h3>
+          <h3 class="serif" style="font-size: 1rem; color: var(--green-deep); font-weight: 400; letter-spacing: 0.1em; margin-bottom: 12px;">スタジオレッスン</h3>
           <p style="font-size: 0.95rem; color: var(--text-sub); line-height: 2.2;">やさしい動きのレッスンです お手本や見本はありません 先生の動きを真似るのではなく 言葉の指示を聞いて ご自身のからだを感じながら動いていただきます 初めての方でも安心してご参加いただけます </p>
         </div>
       </div>
@@ -256,34 +363,53 @@
 <section style="background:#fff; padding: 80px 32px;">
   <div class="reveal">
     <span class="section-label" style="margin-bottom: 16px;">SCHEDULE</span>
-    <h2 class="serif" style="font-size: 1.25rem; color: var(--green-deep); font-weight: 400; line-height: 2; margin-bottom: 48px;">レッスンスケジュール</h2>
+    <h2 class="serif" style="font-size: 1.25rem; color: var(--green-deep); font-weight: 400; line-height: 2; margin-bottom: 40px;">レッスンスケジュール</h2>
   </div>
 
   <div>
     <div class="reveal" style="border-top:1px solid #d8e4d8; padding: 32px 0;">
-      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px;">
-        <h3 class="serif" style="font-size:1rem; color:var(--green-deep); font-weight:400;">グループレッスン</h3>
+      <div style="margin-bottom:12px;">
+        <h3 class="serif" style="font-size:1rem; color:var(--green-deep); font-weight:400;">スタジオレッスン</h3>
       </div>
       <p style="font-size:0.95rem; color:var(--text-sub); line-height:2.2;">毎月第2・第4火曜日<br>14:30〜16:00</p>
     </div>
-
-    <div class="reveal" style="border-top:1px solid #d8e4d8; padding: 32px 0; transition-delay:0.15s;">
-      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px;">
+    <div class="reveal" style="border-top:1px solid #d8e4d8; padding: 32px 0; transition-delay:0.1s;">
+      <div style="margin-bottom:12px;">
         <h3 class="serif" style="font-size:1rem; color:var(--green-deep); font-weight:400;">オンラインレッスン</h3>
       </div>
-      <p style="font-size:0.95rem; color:var(--text-sub); line-height:2.2;">毎月第1・第3金曜日<br>20:00〜21:00</p>
+      <p style="font-size:0.95rem; color:var(--text-sub); line-height:2.2;">毎月第1・第3水曜日<br>10:00〜11:00</p>
+      <p style="font-size:0.95rem; color:var(--text-sub); line-height:2.2; margin-top:8px;">毎月第1・第3金曜日<br>20:00〜21:00</p>
     </div>
-
-    <div class="reveal" style="border-top:1px solid #d8e4d8; border-bottom:1px solid #d8e4d8; padding: 32px 0; transition-delay:0.3s;">
-      <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px;">
+    <div class="reveal" style="border-top:1px solid #d8e4d8; border-bottom:1px solid #d8e4d8; padding: 32px 0; transition-delay:0.2s;">
+      <div style="margin-bottom:12px;">
         <h3 class="serif" style="font-size:1rem; color:var(--green-deep); font-weight:400;">個人セッション</h3>
       </div>
       <p style="font-size:0.95rem; color:var(--text-sub); line-height:2.2;">要予約（随時受付）</p>
     </div>
   </div>
 
-  <div class="reveal" style="margin-top:32px;">
-    <p style="font-size:0.88rem; color:var(--text-sub); line-height:2.2;">※スケジュールが変更になる場合は  Instagramやお申し込みフォームでお知らせします</p>
+  <div style="height: 40px;"></div>
+
+  <div class="reveal calendar-wrapper">
+    <div id="calendar"></div>
+    <div class="calendar-legend">
+      <div class="calendar-legend-item">
+        <div class="calendar-legend-dot" style="background: var(--green-main);"></div>
+        スタジオレッスン
+      </div>
+      <div class="calendar-legend-item">
+        <div class="calendar-legend-dot" style="background: #8a6a8a;"></div>
+        オンラインレッスン
+      </div>
+      <div class="calendar-legend-item">
+        <div class="calendar-legend-dot" style="background: #a09060;"></div>
+        個人セッション
+      </div>
+    </div>
+  </div>
+
+  <div class="reveal" style="margin-top: 8px;">
+    <p style="font-size:0.78rem; color:var(--text-sub); line-height:2.2; opacity:0.8;">※ 日程は変更になる場合があります<br>詳細・お申し込みはフォームよりお問い合わせください</p>
   </div>
 </section>
 
@@ -297,7 +423,7 @@
   <div>
     <div class="reveal" style="border-top:1px solid #d8e4d8; padding: 32px 0;">
       <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px;">
-        <h3 class="serif" style="font-size:1rem; color:var(--green-deep); font-weight:400;">グループレッスン</h3>
+        <h3 class="serif" style="font-size:1rem; color:var(--green-deep); font-weight:400;">スタジオレッスン</h3>
         <span class="playfair" style="font-size:1.4rem; color:var(--green-deep);">¥3,000</span>
       </div>
       <p style="font-size:0.95rem; color:var(--text-sub); line-height:2.2;">約90分<br>会場：和ヨガリポ<br>札幌市中央区南2条西11丁目 きのしたビル6階<br>地下鉄大通駅35番出口より徒歩約5分</p>
@@ -393,7 +519,7 @@
   <div>
     <div class="reveal" style="border-top:1px solid #d8e4d8; padding:32px 0;">
       <p class="serif" style="font-size:0.95rem; color:var(--text-main); line-height:2.5; margin-bottom:16px;">「肩の力が こんなに入っていたなんて レッスン後は からだがふわっと軽くなりました 何より 自分を大切にする感覚が戻ってきた気がします 」</p>
-      <p style="font-size:0.72rem; color:var(--text-sub); letter-spacing:0.12em;">A.M さん（50代・女性）グループレッスン</p>
+      <p style="font-size:0.72rem; color:var(--text-sub); letter-spacing:0.12em;">A.M さん（50代・女性）スタジオレッスン</p>
     </div>
 
     <div class="reveal" style="border-top:1px solid #d8e4d8; padding:32px 0; transition-delay:0.15s;">
@@ -541,6 +667,59 @@
     });
   }, { threshold: 0.12 });
   targets.forEach(el => observer.observe(el));
+</script>
+
+<script>
+/* =====================================================
+   レッスンの予定を編集してください
+   ─────────────────────────────
+   title     : 表示するテキスト
+   date      : 'YYYY-MM-DD' の形式
+   className : スタジオ → 省略
+              オンライン → 'fc-event-online'
+              個人      → 'fc-event-private'
+   ===================================================*/
+const lessonEvents = [
+  { title: 'スタジオ', date: '2026-05-12' },
+  { title: 'スタジオ', date: '2026-05-26' },
+  { title: 'オンライン', date: '2026-05-15', className: 'fc-event-online' },
+  { title: 'オンライン', date: '2026-05-29', className: 'fc-event-online' },
+  { title: 'スタジオ', date: '2026-06-09' },
+  { title: 'スタジオ', date: '2026-06-23' },
+  { title: 'オンライン', date: '2026-06-03', className: 'fc-event-online' },
+  { title: 'オンライン', date: '2026-06-05', className: 'fc-event-online' },
+  { title: 'オンライン', date: '2026-06-17', className: 'fc-event-online' },
+  { title: 'オンライン', date: '2026-06-19', className: 'fc-event-online' },
+];
+/* ===================================================*/
+
+document.addEventListener('DOMContentLoaded', function() {
+  const calendarEl = document.getElementById('calendar');
+  const calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: 'dayGridMonth',
+    locale: 'ja',
+    firstDay: 1,
+    headerToolbar: {
+      left: 'prev',
+      center: 'title',
+      right: 'next'
+    },
+    events: lessonEvents,
+    eventClick: function() {},
+    dayCellContent: function(arg) {
+      return arg.date.getDate();
+    },
+    height: 'auto',
+    fixedWeekCount: false,
+    dayCellClassNames: function(arg) {
+      const day = arg.date.getDay();
+      if (day === 6) return ['fc-day-sat'];
+      if (day === 0) return ['fc-day-sun'];
+      return [];
+    },
+  });
+  calendar.render();
+});
 </script>
 </body>
 </html>

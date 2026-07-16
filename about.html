@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フェルデンクライスメソッドとは｜フェルデンクライスワークス札幌</title>
+<meta name="description" content="フェルデンクライスメソッドは 動きを通して学ぶ方法です ストレッチでもマッサージでもありません ゆっくり 優しく 心地よく動きながら 自分の体に気づいていきます 札幌・オンラインでレッスンを提供しています">
+<meta property="og:title" content="フェルデンクライスメソッドとは｜Feldenkrais Method">
+<meta property="og:description" content="動きを通して学ぶ方法 ストレッチでもマッサージでもない 自分の体から自分で学ぶ">
+<meta property="og:type" content="article">
+<script>window.__TAILWIND_DISABLE_WARNING__ = true;</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  const _warn = console.warn;
+  console.warn = (...args) => {
+    if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
+    _warn.apply(console, args);
+  };
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #3a5a3a;
+    --green-main: #5a8a5a;
+    --green-medium: #5a8a5a;
+    --green-soft: #d4e4d4;
+    --green-bg: #f7f9f5;
+    --text-main: #2b3a2b;
+    --text-sub: #3a4a3a;
+    --cream: #faf8f4;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    color: var(--text-main);
+    background: #fff;
+    line-height: 2;
+    letter-spacing: 0.04em;
+  }
+  .serif { font-family: 'Noto Serif JP', serif; font-weight: 400; }
+  .playfair { font-family: 'Playfair Display', Georgia, serif; }
+
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 24px;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(90,138,90,0.1);
+  }
+
+  .cta-btn {
+    display: block;
+    background: var(--green-deep);
+    color: #fff;
+    text-align: center;
+    padding: 18px 24px;
+    letter-spacing: 0.15em;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+  }
+  .cta-line {
+    background: transparent;
+    color: var(--green-deep);
+    border: 1px solid var(--green-medium);
+  }
+  .cta-btn:hover { opacity: 0.75; }
+
+  .section-label {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    color: var(--green-main);
+    display: block;
+  }
+
+  .divider {
+    width: 1px;
+    height: 60px;
+    background: var(--green-main);
+    margin: 32px auto;
+    opacity: 0.4;
+  }
+
+  /* スクロールアニメーション */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* 本文セクション */
+  .body-section {
+    padding: 72px 32px;
+    scroll-margin-top: 90px;
+  }
+  .body-section h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--green-deep);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    margin-bottom: 40px;
+  }
+  .body-section h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--green-deep);
+    line-height: 2;
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+    margin-top: 48px;
+  }
+  .body-section h3:first-of-type { margin-top: 0; }
+  .body-section p {
+    font-size: 0.95rem;
+    line-height: 2.4;
+    color: var(--text-sub);
+    margin-bottom: 24px;
+  }
+
+  .figure {
+    margin: 0 auto 40px;
+    max-width: 68%;
+  }
+  .figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .figure figcaption {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    color: var(--text-sub);
+    opacity: 0.6;
+    margin-top: 8px;
+    text-align: right;
+  }
+  @media (max-width: 640px) {
+    .figure { max-width: 88%; }
+  }
+
+  .body-section p.footnote {
+    font-size: 0.58rem;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    color: var(--text-sub);
+    opacity: 0.45;
+    border-top: 1px solid var(--green-soft);
+    padding-top: 16px;
+    margin-top: 8px;
+  }
+
+  /* トップ画像 */
+  .hero {
+    position: relative;
+    width: 100%;
+    margin: 88px 0 0;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 38%;
+    background: linear-gradient(to bottom, rgba(250,248,244,0) 0%, rgba(250,248,244,0.75) 60%, var(--cream) 100%);
+    pointer-events: none;
+  }
+  @media (max-width: 640px) {
+    .hero { margin-top: 84px; }
+    .hero img {
+      height: 46vh;
+      object-fit: cover;
+      object-position: 62% center;
+    }
+  }
+
+  /* 目次 */
+  .toc {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 32px 0 0;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    padding: 0;
+    margin: 0;
+  }
+  .toc li {
+    counter-increment: toc;
+    border-bottom: 1px solid rgba(90,138,90,0.12);
+  }
+  .toc li:first-child {
+    border-top: 1px solid rgba(90,138,90,0.12);
+  }
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 15px 4px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--text-sub);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 0.7rem;
+    color: var(--green-main);
+    opacity: 0.65;
+  }
+  .toc a:hover { color: var(--green-deep); }
+</style>
+</head>
+<body style="padding-bottom: 40px;">
+
+<!-- ヘッダー -->
+<header class="site-header flex items-center justify-center">
+  <a href="/" class="playfair italic text-center" style="color: var(--green-deep); text-decoration:none;">
+    <div style="font-size: 1.6rem; letter-spacing: 0.05em;">Feldenkrais Method</div>
+    <div style="font-size: 0.95rem; letter-spacing: 0.1em; margin-top: 4px; opacity: 0.75;">Feldenkrais Works Sapporo</div>
+  </a>
+</header>
+
+<!-- ========== トップ画像 ========== -->
+<figure class="hero">
+  <img src="images/hero.png" alt="朝の光が差し込む、木の床の静かな空間">
+</figure>
+
+<!-- ========== 導入 ========== -->
+<section style="background: var(--cream); padding: 48px 32px 72px;">
+  <div class="reveal" style="text-align:center;">
+    <div class="playfair" style="font-style: italic; font-size: 2.1rem; letter-spacing: 0.04em; color: var(--green-deep); line-height: 1.4; margin-bottom: 18px;">
+      What is Feldenkrais
+    </div>
+    <h1 class="serif" style="font-size: 0.9rem; font-weight: 300; letter-spacing: 0.18em; color: var(--green-main); line-height: 1.8; margin: 0;">
+      フェルデンクライスメソッドとは
+    </h1>
+    <div class="divider"></div>
+  </div>
+
+  <div class="reveal">
+    <p class="serif" style="font-size: 0.95rem; line-height: 2.6; color: var(--text-sub); margin-bottom: 28px; text-align:center;">
+      肩の力が抜けない　呼吸が浅い　体がなんだか重い
+    </p>
+    <p class="serif" style="font-size: 0.95rem; line-height: 2.6; color: var(--text-sub); margin-bottom: 28px; text-align:center;">
+      その原因が　実は自分でも気づいていない　<br>体の使い方の「習慣」にあるとしたら　どうでしょう
+    </p>
+    <p style="font-size: 0.95rem; line-height: 2.4; color: var(--text-sub); margin-bottom: 24px;">
+      フェルデンクライスメソッドは、動きを通して学ぶ方法です。ストレッチでも、マッサージでも、体を鍛えることでもありません。ゆっくりと、優しく、心地よく動きながら、今、自分の体で何が起きているかに注意を向けていく。ただそれだけのことから、体は驚くほど変わっていきます。
+    </p>
+    <p style="font-size: 0.95rem; line-height: 2.4; color: var(--text-sub);">
+      正しくやろうとしなくていい。むしろ、余分な力を手放したときにこそ、変化は訪れます。
+    </p>
+  </div>
+
+  <nav class="toc reveal">
+    <ol>
+      <li><a href="#learning">動きを通して学ぶ</a></li>
+      <li><a href="#moshe">モシェ・フェルデンクライスという人</a></li>
+      <li><a href="#forms">二つのレッスンのかたち</a></li>
+      <li><a href="#sensing">なぜ、感じることが大切なのか</a></li>
+      <li><a href="#lessons">札幌で、オンラインで</a></li>
+    </ol>
+  </nav>
+</section>
+
+<!-- ========== フェルデンクライスメソッドとは ========== -->
+<section id="learning" class="body-section" style="background: #fff;">
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom: 16px;">LEARNING</span>
+    <h2>動きを通して学ぶ</h2>
+  </div>
+
+  <div class="reveal">
+    <h3>体と心を、分けない</h3>
+    <p>フェルデンクライスメソッドは、ソマティック・エデュケーション——体と心を分けない教育——と呼ばれる考え方に立っています。</p>
+    <p>誰かの言う通りにするのではなく、自分で動いてみる。「正しい」「正しくない」から離れて、自分で動きを探す。そうしたとき、動きが変わる経験があります。</p>
+    <p>そうした経験を積み重ねることで、選択肢が増えていきます。その増えた選択肢の中から、最適な選択を適切にできるようになっていきます。そして「自分で見つけた」という実感を持つことができます。自分自身への信頼感が得られて、自分のリソース（もっている力）に気づいていくことができ、心持ちも明るく変化していきます。</p>
+    <p>だからこのメソッドでは、レッスンを受ける方を、患者ともクライアントとも呼びません。学ぶ人として向き合います。治してもらう場所ではなく、自分で学ぶ場所。そしてその学びは、レッスンの時間の中だけで終わりません。日常の動作や、仕事、遊び——生活そのものの中へ、少しずつ広がっていきます。</p>
+  </div>
+
+  <div class="reveal">
+    <h3>教わるのではなく、自分の体から学ぶ</h3>
+    <p>フェルデンクライスメソッドを「学習」と呼ぶとき、それは学校の勉強や技術の習得とは違う意味を持っています。</p>
+    <p>レッスンでは動きの指示があります。けれども、その動きが「できるかどうか」という目的達成の制限を外し、その動きを「どのように行っているか」に意識を向けます。時間の制限や期限を設けず、十分な学びの時間の中で、誰かに結果を教わるのではなく、自分の体から自分で学んでいく。</p>
+    <p>なぜ「できるかどうか」を外すのでしょうか。目的を達成しようとすると、人はどうしても手段を選ばなくなります。とにかくやり遂げようとして、自分の習慣的なやり方で頑張り、意志の力で押し切ってしまう。けれどもそれでは、習慣は習慣のまま残ります。フェルデンクライスメソッドが変えたいのは、その習慣です。だから、結果ではなく、そこへ至るプロセスに目を向けます。</p>
+    <p>強迫性を感じず、心地よさの中で行うと、年齢や身体的な違いにかかわらず、誰もが例外なく達成することができる——フェルデンクライス博士自身も、レッスンの中でたびたび述べています。</p>
+    <p>このような主体的な学びのプロセスを通せば、機械的な反復練習を無理やり行わずとも、先生にやり方を教わらなくても、体は自分でやり方を見つけていきます。</p>
+    <p>そして、動きを通してのこうした気づきは、身体能力の向上にとどまりません。自分への自信や信頼感をもたらし、行動変容へとつながっていくのです。</p>
+  </div>
+
+  <div class="reveal">
+    <h3>正しくやろうとしないこと</h3>
+    <p>フェルデンクライスメソッドでは、「頑張らない」「正しさを求めない」ということがよく言われます。これは単なる心構えの話ではありません。</p>
+    <p>正しくやろうとすると、今自分が何をしているかの気づきが得にくくなります。目的を達成しようとするあまり、これまでの習慣的な動き方で動いてしまう。そして習慣的な考え方に固執し、結局は頑張ってしまう——正しさを求めるほど、かえって力が入り、変化から遠ざかっていきます。</p>
+    <p>だから、目的をいったん手放して、今何が起きているかに注意を向ける。すると、望んでいたことがむしろ達成される。ここがフェルデンクライスメソッドのポイントです。</p>
+  </div>
+
+  <div class="reveal">
+    <h3>変化は、意図した先にはない</h3>
+    <p>ATMのレッスンの中で、意図していないのに、勝手に動きが突然変わる瞬間があります。</p>
+    <p>努力もしていない、それをやろうともしていない。なのに、急に動きの方向が変わったり、滑らかに、スムーズになったりする。滑らかにやろうとか、もっと大きく動こうといったことは、何もしていません。ただ、自分が何をしているかに注意を向けていただけ。その結果として、変化がひとりでに起こります。</p>
+    <p>こうした瞬間こそ、フェルデンクライスメソッドが「学習」と呼ぶものの正体です。誰かに正しい形を教わって上達したのではなく、神経系が自分で、より良い動き方を見つけ出す。変化は、意図した先にではなく、注意を向けた先に訪れます。</p>
+  </div>
+</section>
+
+<!-- ========== モシェ・フェルデンクライスという人 ========== -->
+<section id="moshe" class="body-section" style="background: var(--green-bg);">
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom: 16px;">MOSHE FELDENKRAIS</span>
+    <h2>モシェ・フェルデンクライスという人</h2>
+  </div>
+
+  <figure class="figure reveal">
+    <img src="images/moshe-feldenkrais.png" alt="モシェ・フェルデンクライスの肖像写真">
+    <figcaption>© International Feldenkrais® Federation</figcaption>
+  </figure>
+
+  <div class="reveal">
+    <p>フェルデンクライスメソッドは、モシェ・フェルデンクライス（1904–1984）という一人の人物が編み出した方法です。</p>
+    <p>彼は、物理学者であり、技術者でした。パリのソルボンヌで学び、物理学の博士号を得て、当時の最先端の研究所で働いた科学者です。同時に、柔道家でもありました。パリで柔道の創始者・嘉納治五郎と出会い、その勧めで柔道を深めていきます。ヨーロッパでいち早く黒帯を取得した一人であり、パリに柔道クラブを設立しました。科学と、身体の技。この二つを深く生きた人でした。</p>
+    <p>彼が自らの方法を編み出すきっかけになったのは、古い膝の怪我でした。若い頃サッカーで痛めた膝が、後年になって悪化します。医師からは手術を勧められましたが、その成功は確かではありませんでした。</p>
+    <p>そこで彼は、手術に頼るのではなく、自分の体を観察することを選びます。どう動けば痛みが少ないのか。どう動けば、また歩けるようになるのか。物理学者としての知識と、柔道で培った身体への感覚を頼りに、ごくわずかな動きを、幾度も、注意深くたどっていきました。</p>
+    <p>この探究のなかで彼が見出したのは、一つの身体の部分は、他のすべてと関わり合って動いているということ。そして、動きを通して自分自身を観察することで、人は新しい動き方を——ひいては、新しい自分のあり方を——学び直せるということでした。</p>
+    <p>やがてこの方法は、多くの人に知られていきます。なかでも、イスラエルの初代首相ダビド・ベン=グリオンが、長年の腰痛を抱えてフェルデンクライスのもとを訪れたことはよく知られています。70歳を超えた首相が、レッスンを重ねた末に浜辺で逆立ちをしてみせた——その姿は、この方法が持つ可能性を、鮮やかに物語るものでした。</p>
+    <p>こうして受け継がれてきたのが、フェルデンクライスメソッドです。それは、一人の科学者が、自らの体を実験室として見出した、学びの方法だったのです。</p>
+  </div>
+</section>
+
+<!-- ========== 二つのレッスンのかたち ========== -->
+<section id="forms" class="body-section" style="background: #fff;">
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom: 16px;">TWO FORMS</span>
+    <h2>二つのレッスンのかたち</h2>
+    <p>フェルデンクライスメソッドには、一般に二つのレッスンのかたちがあります。グループで行う「動きによる気づき（ATM）」と、一対一で行う「機能統合（FI）」です。どちらも同じ考え方に根ざしていますが、体験のしかたが異なります。</p>
+  </div>
+
+  <div class="reveal">
+    <h3>動きによる気づき — ATM</h3>
+  </div>
+
+  <figure class="figure reveal">
+    <img src="images/atm-lesson.png" alt="床に横になり、それぞれのペースで動くATMグループレッスンの様子">
+    <figcaption>© International Feldenkrais® Federation, photography by Robert Golden</figcaption>
+  </figure>
+
+  <div class="reveal">
+    <p>ATM（Awareness Through Movement）は、言葉による案内にそって、自分で動いていくグループレッスンです。</p>
+    <p>多くは、床に横になったところから始まります。教師が動きをガイドし、その言葉を聞きながら、自分のペースで、無理のない範囲で動いていきます。基本的には、体に触れることはありません。手本を見て真似るのでもありません。ただ、言葉にそって動きながら、今、自分の体で何が起きているかに注意を向けていきます。</p>
+    <p>ゆっくりと、優しく、心地よく。競争も、正解もありません。その静かな探究のなかで、体は少しずつ、これまでとは違う動き方を見つけていきます。</p>
+  </div>
+
+  <div class="reveal">
+    <h3>手を通しての個人セッション</h3>
+    <!-- 写真を入れる場合はここに figure を追加 -->
+    <p>もう一つのかたちは、教師が手を使って一対一で行うもので、フェルデンクライスメソッドでは機能統合（FI / Functional Integration）と呼ばれます。</p>
+    <p>受け手は、多くは横になったまま、力を抜いてくつろいでいます。教師は、優しく、ていねいな手のふれ方で、その人の動きを導いていきます。これは、凝りをほぐすマッサージでも、骨格を正す施術でもありません。手を通して、その人自身が新しい動き方に気づいていく、そんな時間です。</p>
+    <p>当studioでは、この考え方をもとにした個人セッションをご用意しています。フェルデンクライスの学びにもとづいて、お一人おひとりの体に合わせ、その方だけのための動きの時間をともにします。</p>
+  </div>
+</section>
+
+<!-- ========== なぜ、感じることが大切なのか ========== -->
+<section id="sensing" class="body-section" style="background: var(--green-bg);">
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom: 16px;">SENSING</span>
+    <h2>なぜ、感じることが大切なのか</h2>
+    <p>フェルデンクライスメソッドは、体を鍛える方法でも、正しい形に矯正する方法でもありません。その中心にあるのは、感じることです。</p>
+    <p>考えてみると、私たちは自分の体を、いつも見ているわけではありません。それでも、手がどこにあるか、足がどう動いているかを、感じることができます。歩くとき、いちいち足の運びを目で確かめたりはしません。体が、自分で感じ取りながら動いている。</p>
+    <p>この「感じ取る力」は、実は、動き方そのものを決めています。脳は、体から届く感覚をたよりに、次にどう動くかを絶えず選んでいます。ですから、感じ取る力が細やかになれば、動きの選び方も変わっていきます。</p>
+    <p>ところが、ふだんの私たちは、この感覚にあまり注意を向けていません。急いでいたり、正しくやろうとしていたりすると、なおさらです。いつもの習慣的な動き方が、感じ取るより先に働いてしまう。</p>
+    <p>フェルデンクライスメソッドが、ゆっくり、優しく、心地よく動くことを大切にするのは、このためです。ゆっくり動けば、感じ取る余裕が生まれます。優しく動けば、細やかな違いに気づきやすくなります。心地よく動けば、力みがほどけて、感覚がより鮮明になります。そうして感じ取る力が育つと、体は、これまでとは違う動き方を、自分で見つけていくのです。</p>
+    <p>「勝手に動きが変わる」あの瞬間も、突きつめれば、感じ取る力が細やかになった結果なのだと思います。誰かに教わったのでも、無理に矯正したのでもなく、自分で感じ、自分で見つけた変化。だからこそ、それは深く身につきます。</p>
+    <p>体を動かすだけなら、運動でも、ストレッチでもできます。フェルデンクライスメソッドが働きかけるのは、その動きを組み立てている神経系のほうです。</p>
+    <p>神経系が変わるには、ただ刺激を与えるだけでは足りません。そこに「気づき」が必要とされています。</p>
+    <p>習慣は、大切なものです。いちいち考えなくても歩けるのは、脳が省エネモードで、自動的に処理してくれるからです。けれども、その習慣にとらわれてしまうと、変化は生まれません。</p>
+    <p>だから、気づきによって、その自動的な働きに触れていく。すると、学習の質が変わり、選べるパターンが増えていきます。これが、神経系にアプローチするということです。</p>
+    <p style="margin-bottom: 12px;">フェルデンクライスメソッドは、感覚と気づきに働きかけるこうしたアプローチの効果について、近年、研究による検証も進められています。<sup>1</sup></p>
+    <p class="footnote">1. Hillier, S., &amp; Worley, A. (2015). The Effectiveness of the Feldenkrais Method: A Systematic Review of the Evidence. <em>Evidence-Based Complementary and Alternative Medicine</em>, 2015, 752160.</p>
+  </div>
+</section>
+
+<!-- ========== 札幌で、オンラインで ========== -->
+<section id="lessons" class="body-section" style="background: var(--cream);">
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom: 16px;">LESSONS</span>
+    <h2>札幌で、オンラインで</h2>
+    <!-- 写真を入れる場合はここに figure を追加 -->
+    <p>フェルデンクライスワークス札幌では、この方法を、グループレッスン、オンラインレッスン、そして個人セッションのかたちで提供しています。</p>
+    <p>オンラインレッスンなら、お住まいの場所を問わず、ご自宅にいながら受けていただけます。必要なのは、床に横になれるわずかなスペースだけ。画面の前で、自分のペースで、静かに動きをたどる時間です。</p>
+    <p>対面でのグループレッスンでは、広いスタジオで、その場の空気を感じながら動きます。日常から少し離れて、自分の体だけに向き合う時間です。個人セッションもご用意しています。</p>
+    <p>年齢や体の状態にかかわらず、どなたでも始められます。運動が得意である必要はありません。むしろ、「力を抜くのが苦手」「体が動かしにくい」と感じている方にこそ、試していただきたい方法です。</p>
+    <p>はじめてで、少し不安のある方へ。まずは気軽に、LINEからご相談ください。ご質問におこたえしながら、あなたに合ったレッスンをご案内します。</p>
+    <p>レッスンの詳しい内容、日程や料金、よくあるご質問については、こちらのページでご覧いただけます。</p>
+  </div>
+
+  <div class="reveal">
+    <a href="https://lin.ee/sXO6Sug" target="_blank" class="cta-btn cta-line" style="max-width:320px; margin:32px auto 0; letter-spacing:0.2em;">
+      <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; letter-spacing: 0.2em;">LINEで相談する</span>
+    </a>
+    <a href="/" class="cta-btn" style="max-width:320px; margin:12px auto 0; letter-spacing:0.2em;">
+      <span style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; letter-spacing: 0.2em;">レッスンの詳細を見る</span>
+    </a>
+  </div>
+</section>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

@@ -232,6 +232,49 @@
     opacity: 0.65;
   }
   .toc a:hover { color: var(--green-deep); }
+
+  /* 目次へ戻る */
+  .back-to-toc {
+    display: block;
+    text-align: center;
+    margin-top: 44px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.72rem;
+    font-weight: 300;
+    letter-spacing: 0.16em;
+    color: var(--green-main);
+    opacity: 0.7;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  .back-to-toc:hover { opacity: 1; color: var(--green-deep); }
+
+  .toc-fab {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 90;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(250,248,244,0.94);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(90,138,90,0.18);
+    color: var(--green-deep);
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    box-shadow: 0 2px 14px rgba(58,90,58,0.10);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  }
+  .toc-fab.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .toc-fab:hover { background: #fff; }
 </style>
 </head>
 <body style="padding-bottom: 40px;">
@@ -276,7 +319,7 @@
     </p>
   </div>
 
-  <nav class="toc reveal">
+  <nav id="toc" class="toc reveal">
     <ol>
       <li><a href="#learning">動きを通して学ぶ</a></li>
       <li><a href="#moshe">モシェ・フェルデンクライスという人</a></li>
@@ -325,6 +368,8 @@
     <p>努力もしていない、それをやろうともしていない。なのに、急に動きの方向が変わったり、滑らかに、スムーズになったりする。滑らかにやろうとか、もっと大きく動こうといったことは、何もしていません。ただ、自分が何をしているかに注意を向けていただけ。その結果として、変化がひとりでに起こります。</p>
     <p>こうした瞬間こそ、フェルデンクライスメソッドが「学習」と呼ぶものの正体です。誰かに正しい形を教わって上達したのではなく、神経系が自分で、より良い動き方を見つけ出す。変化は、意図した先にではなく、注意を向けた先に訪れます。</p>
   </div>
+
+  <a href="#toc" class="back-to-toc reveal">↑　目次へ戻る</a>
 </section>
 
 <!-- ========== モシェ・フェルデンクライスという人 ========== -->
@@ -348,6 +393,8 @@
     <p>やがてこの方法は、多くの人に知られていきます。なかでも、イスラエルの初代首相ダビド・ベン=グリオンが、長年の腰痛を抱えてフェルデンクライスのもとを訪れたことはよく知られています。70歳を超えた首相が、レッスンを重ねた末に浜辺で逆立ちをしてみせた——その姿は、この方法が持つ可能性を、鮮やかに物語るものでした。</p>
     <p>こうして受け継がれてきたのが、フェルデンクライスメソッドです。それは、一人の科学者が、自らの体を実験室として見出した、学びの方法だったのです。</p>
   </div>
+
+  <a href="#toc" class="back-to-toc reveal">↑　目次へ戻る</a>
 </section>
 
 <!-- ========== 二つのレッスンのかたち ========== -->
@@ -380,6 +427,8 @@
     <p>受け手は、多くは横になったまま、力を抜いてくつろいでいます。教師は、優しく、ていねいな手のふれ方で、その人の動きを導いていきます。これは、凝りをほぐすマッサージでも、骨格を正す施術でもありません。手を通して、その人自身が新しい動き方に気づいていく、そんな時間です。</p>
     <p>当studioでは、この考え方をもとにした個人セッションをご用意しています。フェルデンクライスの学びにもとづいて、お一人おひとりの体に合わせ、その方だけのための動きの時間をともにします。</p>
   </div>
+
+  <a href="#toc" class="back-to-toc reveal">↑　目次へ戻る</a>
 </section>
 
 <!-- ========== なぜ、感じることが大切なのか ========== -->
@@ -400,6 +449,8 @@
     <p style="margin-bottom: 12px;">フェルデンクライスメソッドは、感覚と気づきに働きかけるこうしたアプローチの効果について、近年、研究による検証も進められています。<sup>1</sup></p>
     <p class="footnote">1. Hillier, S., &amp; Worley, A. (2015). The Effectiveness of the Feldenkrais Method: A Systematic Review of the Evidence. <em>Evidence-Based Complementary and Alternative Medicine</em>, 2015, 752160.</p>
   </div>
+
+  <a href="#toc" class="back-to-toc reveal">↑　目次へ戻る</a>
 </section>
 
 <!-- ========== 札幌で、オンラインで ========== -->
@@ -426,6 +477,8 @@
   </div>
 </section>
 
+<a href="#toc" id="tocFab" class="toc-fab" aria-label="目次へ戻る">目次</a>
+
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -433,6 +486,15 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const fab = document.getElementById('tocFab');
+  const toc = document.getElementById('toc');
+  const fabObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      fab.classList.toggle('show', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+    });
+  }, { threshold: 0 });
+  fabObserver.observe(toc);
 </script>
 
 </body>

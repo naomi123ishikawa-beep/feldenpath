@@ -100,6 +100,41 @@
 
   .about-link:hover .about-arrow { transform: translateX(6px); }
 
+  .about-reading-head .serif { transition: color 0.3s ease; }
+  .about-reading-head:hover .serif { color: var(--green-main); }
+
+  .about-menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 4px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(90,138,90,0.22);
+    transition: padding-left 0.3s ease, background 0.3s ease;
+  }
+  .about-menu-item .label {
+    font-size: 0.92rem;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--green-deep);
+    line-height: 1.7;
+  }
+  .about-menu-item .about-arrow {
+    flex-shrink: 0;
+    color: var(--green-main);
+    opacity: 0.55;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .about-menu-item:hover {
+    padding-left: 12px;
+    background: rgba(90,138,90,0.04);
+  }
+  .about-menu-item:hover .about-arrow {
+    transform: translateX(6px);
+    opacity: 0.9;
+  }
+
   .service-item {
     border-top: 1px solid #d8e4d8;
     padding: 32px 0;
@@ -536,11 +571,34 @@
     </div>
   </div>
 
-  <div class="reveal" style="text-align:center; margin-top:64px;">
-    <a href="/about" class="about-link" style="display:inline-block; text-decoration:none; border-bottom:1px solid rgba(90,138,90,0.28); padding-bottom:6px;">
-      <span class="serif" style="display:block; font-size:0.9rem; font-weight:300; letter-spacing:0.1em; color:var(--green-deep); line-height:1.8;">フェルデンクライスメソッドとは<span class="about-arrow" style="display:inline-block; margin-left:10px; transition:transform 0.3s ease;">→</span></span>
-      <span class="playfair" style="display:block; font-style:italic; font-size:0.68rem; letter-spacing:0.12em; color:var(--green-main); opacity:0.7; margin-top:2px;">About the Feldenkrais Method</span>
+  <div class="reveal about-reading" style="margin-top:64px; max-width:520px; margin-left:auto; margin-right:auto;">
+    <a href="/about" class="about-reading-head" style="display:block; text-decoration:none; margin-bottom:36px;">
+      <span class="serif" style="display:block; text-align:center; font-size:0.9rem; font-weight:400; letter-spacing:0.08em; color:var(--green-deep); line-height:1.9; margin-bottom:6px;">ことばにすると少しこぼれてしまうのですけれど</span>
+      <span class="playfair" style="display:block; text-align:center; font-style:italic; font-size:0.68rem; letter-spacing:0.12em; color:var(--green-main); opacity:1;">Reading the Feldenkrais Method</span>
     </a>
+
+    <nav class="about-menu" style="border-top:1px solid rgba(90,138,90,0.22);">
+      <a href="/about#learning" class="about-menu-item">
+        <span class="serif label">動きを通して学ぶ</span>
+        <span class="about-arrow">→</span>
+      </a>
+      <a href="/about#moshe" class="about-menu-item">
+        <span class="serif label">モシェ・フェルデンクライスという人</span>
+        <span class="about-arrow">→</span>
+      </a>
+      <a href="/about#forms" class="about-menu-item">
+        <span class="serif label">二つのレッスンのかたち</span>
+        <span class="about-arrow">→</span>
+      </a>
+      <a href="/about#sensing" class="about-menu-item">
+        <span class="serif label">なぜ、感じることが大切なのか</span>
+        <span class="about-arrow">→</span>
+      </a>
+      <a href="/about#lessons" class="about-menu-item">
+        <span class="serif label">札幌で、オンラインで</span>
+        <span class="about-arrow">→</span>
+      </a>
+    </nav>
   </div>
 </section>
 

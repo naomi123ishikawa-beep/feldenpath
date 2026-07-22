@@ -275,6 +275,33 @@
   }
   .toc-fab.show { opacity: 1; visibility: visible; transform: translateY(0); }
   .toc-fab:hover { background: #fff; }
+
+  .home-fab {
+    position: fixed;
+    right: 18px;
+    bottom: 72px;
+    z-index: 90;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(250,248,244,0.94);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(90,138,90,0.18);
+    color: var(--green-deep);
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    box-shadow: 0 2px 14px rgba(58,90,58,0.10);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  }
+  .home-fab.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .home-fab:hover { background: #fff; }
 </style>
 </head>
 <body style="padding-bottom: 40px;">
@@ -306,10 +333,10 @@
 
   <div class="reveal">
     <p class="serif" style="font-size: 0.95rem; line-height: 2.6; color: var(--text-sub); margin-bottom: 28px; text-align:center;">
-      肩の力が抜けない　呼吸が浅い　体がなんだか重い
+      <span style="display:inline-block;">肩の力が抜けない</span>　<span style="display:inline-block;">呼吸が浅い</span>　<span style="display:inline-block;">体がなんだか重い</span>
     </p>
     <p class="serif" style="font-size: 0.95rem; line-height: 2.6; color: var(--text-sub); margin-bottom: 28px; text-align:center;">
-      その原因が　実は自分でも気づいていない　<br>体の使い方の「習慣」にあるとしたら　どうでしょう
+      <span style="display:inline-block;">その原因が</span>　<span style="display:inline-block;">実は自分でも気づいていない</span>　<br><span style="display:inline-block;">体の使い方の「習慣」にあるとしたら</span>　<span style="display:inline-block;">どうでしょう</span>
     </p>
     <p style="font-size: 0.95rem; line-height: 2.4; color: var(--text-sub); margin-bottom: 24px;">
       フェルデンクライスメソッドは、動きを通して学ぶ方法です。ストレッチでも、マッサージでも、体を鍛えることでもありません。ゆっくりと、優しく、心地よく動きながら、今、自分の体で何が起きているかに注意を向けていく。ただそれだけのことから、体は驚くほど変わっていきます。
@@ -477,6 +504,7 @@
   </div>
 </section>
 
+<a href="https://feldenpath.com" id="homeFab" class="home-fab" aria-label="トップページへ戻る">TOP</a>
 <a href="#toc" id="tocFab" class="toc-fab" aria-label="目次へ戻る">目次</a>
 
 <script>
@@ -488,10 +516,13 @@
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   const fab = document.getElementById('tocFab');
+  const homeFab = document.getElementById('homeFab');
   const toc = document.getElementById('toc');
   const fabObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      fab.classList.toggle('show', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+      const show = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      fab.classList.toggle('show', show);
+      homeFab.classList.toggle('show', show);
     });
   }, { threshold: 0 });
   fabObserver.observe(toc);

@@ -302,6 +302,88 @@
   }
   .home-fab.show { opacity: 1; visibility: visible; transform: translateY(0); }
   .home-fab:hover { background: #fff; }
+
+  /* 書籍 */
+  .books-photo {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto 48px;
+    display: block;
+    border-radius: 2px;
+  }
+  .book-table {
+    max-width: 560px;
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .book-table th {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.66rem;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    color: var(--green-main);
+    opacity: 0.65;
+    text-align: left;
+    padding: 0 10px 10px 0;
+    border-bottom: 1px solid rgba(90,138,90,0.25);
+    white-space: nowrap;
+  }
+  .book-table td {
+    padding: 16px 10px 16px 0;
+    border-bottom: 1px solid rgba(90,138,90,0.11);
+    vertical-align: top;
+  }
+  .book-table tr:last-child td { border-bottom: none; }
+  .book-table .t-orig {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--green-deep);
+    line-height: 1.5;
+  }
+  .book-table .t-year {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 0.8rem;
+    color: var(--green-main);
+    opacity: 0.6;
+    white-space: nowrap;
+  }
+  .book-table .t-ja {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    line-height: 1.9;
+  }
+  .book-table .t-none { color: var(--green-main); opacity: 0.3; }
+  .book-notes {
+    max-width: 560px;
+    margin: 48px auto 0;
+    padding-top: 40px;
+    border-top: 1px solid rgba(90,138,90,0.18);
+  }
+  .book-note { margin-bottom: 36px; }
+  .book-note:last-child { margin-bottom: 0; }
+  .book-note h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--green-deep);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+    margin: 0 0 10px;
+  }
+  .book-note p {
+    font-size: 0.9rem;
+    line-height: 2.3;
+    color: var(--text-sub);
+    margin: 0;
+  }
+  @media (max-width: 640px) {
+    .book-table .t-orig { font-size: 0.82rem; }
+    .book-table .t-ja { font-size: 0.74rem; }
+    .book-table td { padding: 14px 8px 14px 0; }
+  }
 </style>
 </head>
 <body style="padding-bottom: 40px;">
@@ -350,6 +432,7 @@
     <ol>
       <li><a href="#learning">動きを通して学ぶ</a></li>
       <li><a href="#moshe">モシェ・フェルデンクライスという人</a></li>
+      <li><a href="#books">フェルデンクライスの本</a></li>
       <li><a href="#forms">二つのレッスンのかたち</a></li>
       <li><a href="#sensing">なぜ、感じることが大切なのか</a></li>
       <li><a href="#lessons">札幌で、オンラインで</a></li>
@@ -419,6 +502,74 @@
     <p>この探究のなかで彼が見出したのは、一つの身体の部分は、他のすべてと関わり合って動いているということ。そして、動きを通して自分自身を観察することで、人は新しい動き方を——ひいては、新しい自分のあり方を——学び直せるということでした。</p>
     <p>やがてこの方法は、多くの人に知られていきます。なかでも、イスラエルの初代首相ダビド・ベン=グリオンが、長年の腰痛を抱えてフェルデンクライスのもとを訪れたことはよく知られています。70歳を超えた首相が、レッスンを重ねた末に浜辺で逆立ちをしてみせた——その姿は、この方法が持つ可能性を、鮮やかに物語るものでした。</p>
     <p>こうして受け継がれてきたのが、フェルデンクライスメソッドです。それは、一人の科学者が、自らの体を実験室として見出した、学びの方法だったのです。</p>
+  </div>
+
+  <a href="#toc" class="back-to-toc reveal">↑　目次へ戻る</a>
+</section>
+
+
+<!-- ========== フェルデンクライスの本 ========== -->
+<section id="books" class="body-section" style="background: var(--cream);">
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom: 16px;">BOOKS</span>
+    <h2 class="serif">フェルデンクライスの本</h2>
+  </div>
+
+  <div class="reveal">
+    <img src="images/books.jpg" alt="モーシェ・フェルデンクライスの著作　原著と邦訳" class="books-photo">
+  </div>
+
+  <div class="reveal" style="max-width: 560px; margin: 0 auto 48px;">
+    <p style="font-size: 0.95rem; line-height: 2.4; color: var(--text-sub);">
+      フェルデンクライスメソッドに関する書籍はたくさん出版されていますが、まずはフェルデンクライス博士が書いたものを読んでみることをおすすめします。訳本なので読みづらさはあるかもしれませんが、フェルデンクライスメソッドの哲学に触れられることになると思います。
+    </p>
+  </div>
+
+  <div class="reveal">
+    <table class="book-table">
+      <thead>
+        <tr><th>原題</th><th>年</th><th>邦訳（安井武 訳）</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="t-orig">Body and Mature Behavior</td>
+          <td class="t-year">1949</td>
+          <td class="t-ja t-none">──</td>
+        </tr>
+        <tr>
+          <td class="t-orig">Awareness Through Movement</td>
+          <td class="t-year">1972</td>
+          <td class="t-ja">フェルデンクライス身体訓練法<br>大和書房 1982</td>
+        </tr>
+        <tr>
+          <td class="t-orig">The Case of Nora</td>
+          <td class="t-year">1977</td>
+          <td class="t-ja">脳の迷路の冒険<br>壮神社 1991</td>
+        </tr>
+        <tr>
+          <td class="t-orig">The Elusive Obvious</td>
+          <td class="t-year">1981</td>
+          <td class="t-ja t-none">──</td>
+        </tr>
+        <tr>
+          <td class="t-orig">The Master Moves</td>
+          <td class="t-year">1984</td>
+          <td class="t-ja">心をひらく体のレッスン<br>新潮社 1988・一光社 2001</td>
+        </tr>
+        <tr>
+          <td class="t-orig">The Potent Self</td>
+          <td class="t-year">1985</td>
+          <td class="t-ja t-none">──</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="reveal book-notes">
+    <div class="book-note">
+      <h3>フェルデンクライス身体訓練法</h3>
+      <p>日本で初めて紹介されたもので、その理論と実際のレッスンの両方を知ることができます。</p>
+    </div>
   </div>
 
   <a href="#toc" class="back-to-toc reveal">↑　目次へ戻る</a>

@@ -99,6 +99,8 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   .about-link:hover .about-arrow { transform: translateX(6px); }
+  .about-click .about-arrow { display:inline-block; transition: transform 0.3s ease; }
+  .about-click:hover .about-arrow { transform: translateX(6px); }
 
   .about-reading-head .serif { transition: color 0.3s ease; }
   .about-reading-head:hover .serif { color: var(--green-main); }
@@ -578,28 +580,10 @@
       <span class="playfair" style="display:block; text-align:center; font-style:italic; font-size:0.68rem; letter-spacing:0.12em; color:var(--green-main); opacity:1;">Reading the Feldenkrais Method</span>
     </a>
 
-    <nav class="about-menu" style="border-top:1px solid rgba(90,138,90,0.22);">
-      <a href="/about#learning" class="about-menu-item">
-        <span class="serif label">動きを通して学ぶ</span>
-        <span class="about-arrow">→</span>
-      </a>
-      <a href="/about#moshe" class="about-menu-item">
-        <span class="serif label">モシェ・フェルデンクライスという人</span>
-        <span class="about-arrow">→</span>
-      </a>
-      <a href="/about#forms" class="about-menu-item">
-        <span class="serif label">二つのレッスンのかたち</span>
-        <span class="about-arrow">→</span>
-      </a>
-      <a href="/about#sensing" class="about-menu-item">
-        <span class="serif label">なぜ、感じることが大切なのか</span>
-        <span class="about-arrow">→</span>
-      </a>
-      <a href="/about#lessons" class="about-menu-item">
-        <span class="serif label">札幌で、オンラインで</span>
-        <span class="about-arrow">→</span>
-      </a>
-    </nav>
+    <a href="/about" class="about-click" style="display:block; text-align:center; text-decoration:none; padding-top:28px; border-top:1px solid rgba(90,138,90,0.22);">
+      <span class="playfair" style="font-style:italic; font-size:0.92rem; letter-spacing:0.14em; color:var(--green-deep);">Click here</span>
+      <span class="about-arrow" style="margin-left:10px; color:var(--green-main);">→</span>
+    </a>
   </div>
 </section>
 
